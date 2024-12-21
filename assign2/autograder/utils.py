@@ -26,7 +26,7 @@ def install_requirements():
     REQUIREMENTS = os.path.join(os.path.dirname(__file__), "requirements.txt")
     print("⏳ Installing autograder packages (this may take a few minutes)...")
     subprocess.check_call(
-        [sys.executable, "-m", "pip", "install", "-r", REQUIREMENTS],
+        [sys.executable, "-m", "pip", "install", "-i", "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple", "-r", REQUIREMENTS],
         stdout=subprocess.DEVNULL,
     )
     print("✅ Autograder packages installed.")

@@ -17,7 +17,7 @@
 
 #include "utils.h"
 
-std::string kYourName = "STUDENT TODO"; // Don't forget to change this!
+std::string kYourName = "Eric Cartman"; // Don't forget to change this!
 
 /**
  * Takes in a file name and returns a set containing all of the applicant names
@@ -55,7 +55,10 @@ std::set<std::string> get_applicants(std::string filename) {
 std::queue<const std::string *> find_matches(std::string name,
                                              std::set<std::string> &students) {
   std::queue<const std::string *> matchApps;
-  for (auto const &student : students) {
+  for (auto student : students) {
+    if (student == name) {
+      matchApps.push(&student);
+    }
   }
   return matchApps;
   // STUDENT TODO: Implement this function.
